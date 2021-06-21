@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    height: 100%;
+    background-color: grey;
+}
+
+.main {
+    /*EL NUMERO QUE SE LE RESTA ES EL TAMAÑO DEL HEIGTH DEL NAV*/
+    min-height: calc(100vh - 53px);
+    max-height: calc(100vh - 53px);
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+}
+
+.general {
+    width: 1000px;
+    background-color: #333333;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+}
+
+.amigos{
+    background-color: #006A9E;
+    border: 2px solid #005F8D;
+}
+
+/*ELEMENTOS DEL CHAT*/
+.chat{
+    background-color: white;
+    display: grid;
+    grid-template-rows: 60px 1fr 60px;
+}
+    /*ELEMENTOS DEL DIV DATOS*/
+    .datos{
+        background-color: #005F8D;
+        display: flex;
+        padding: 5px;
+    }
+
+        .imgperfil{
+            height: 50px;
+            width: 50px;
+        }
+
+        .nombre{
+            padding-left: 20px;
+            align-self: center; 
+        }
+
+    /*ELEMENTOS DEL DIV ESCRIBIR*/
+    .scroll{
+        height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+
+        background-color: #444;
+    }
+        /*ELEMENTOS DE MENSAJE*/
+        .mensajes{
+            /*background-color: greenyellow;*/
+            height: 0px;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+        }
+            
+            .hora{
+                font-size: 10px;
+                padding-left: 25px;
+                align-self: flex-end;  
+            }
+
+            /*ELEMENTOS DEL DIV OTHER*/
+            .other, .me{
+                padding: 10px;
+            }
+
+            .other{
+                /*background-color: violet;*/
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .other p{
+                background-color: yellow;
+                padding: 5px;
+                max-width: 400px;
+                border-radius: 10px;
+                margin: 1px;
+                display: flex;
+                flex-direction: row;
+            }
+
+            .other p:first-child{
+                background-color: orange;
+                font-weight: bold;
+            }
+
+            /*ELEMENTOS DEL DIV ME*/
+            .me{
+                /*background-color: tomato;*/
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+
+            .me p{
+                background-color: yellow;
+                padding: 5px;
+                max-width: 400px;
+                border-radius: 10px;
+                margin: 1px;
+                display: flex;
+                flex-direction: row;
+            }
+
+/*ELEMENTOS DEL DIV ESCRIBIR*/
+    .escribir{
+        background-color: #005F8D;
+        display: grid;
+        grid-template-columns: 1fr 60px;
+        grid-column-gap: 5px;
+        padding: 5px;
+    }
+
+    .mensaje{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 20px;
+        border: 0px;
+    }
+
+    .bt_enviar{
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        background-color: #006A9E;
+        border: 0px;
+    }

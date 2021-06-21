@@ -1,0 +1,138 @@
+/*SOBREESCRIBIR STYLE.CSS*/
+
+.content {
+    /*Sobreescribir varios valores del contenedor*/
+    margin-top: 20px;
+    padding-bottom: 20px;
+    width: 800px;
+    background-color: #2a2f32;
+    box-shadow: 0px 0px 10px #000;
+}
+
+.conimagen {
+    /*quitar los bordes redondeados y el margen*/
+    margin-top: 0;
+    border-radius: 10px;
+}
+
+.nombrepos {
+    margin-top: 15px;
+    font-weight: bold;
+    color: rgba(6, 247, 255, 0.7);
+}
+
+.imagen_foro {
+    /*que la imagen se adapte bien*/
+    padding: 10px;
+    padding-bottom: 20px;
+    max-width: 1000px;
+    max-height: 800px;
+}
+
+.texto {
+    /*Ajustar el tamaño maximo del contenedor del texto*/
+    max-width: 1000px;
+}
+
+
+/*CREAR COMENTARIO*/
+
+.comentar {
+    /*Espacio en la izquierda para que quede alineado con el post*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.nombre {
+    align-self: flex-start;
+    margin-bottom: 5px;
+    margin-left: 80px;
+}
+
+.areatext {
+    /*Poner el boton a la derecha del area de texto*/
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.crearcoment {
+    /*Estilizacion de la textarea donde se escriben los comentarios*/
+    outline: none;
+    resize: none;
+    overflow-y: hidden;
+    width: 600px;
+    height: 132px;
+    background-color: #2a2f32;
+    border: solid 3px #AAAAAA;
+    border-radius: 15px;
+    color: #AAAAAA;
+    font-weight: 500;
+    padding: 10px;
+}
+
+.crearcoment:focus {
+    border: solid 3px #FFFFEE;
+}
+
+.botoncom {
+    /*Estilo del boton de de envio de los comentarios*/
+    margin-left: 10px;
+    padding: 5px;
+    border: solid 2px #AAAAAA;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #AAAAAA;
+}
+
+.botoncom:hover {
+    background-color: rgb(143, 143, 143);
+}
+
+.separator {
+    /*Estilo del separador entre los comentarios y donde los escribes*/
+    width: 740px;
+    height: 1px;
+    margin: 10px 30px 10px 30px;
+    background-color: #AAAAAA;
+}
+
+
+/*COMENTARIOS YA ESCRITOS*/
+
+#come {
+    margin-right: 5px;
+}
+
+.comment {
+    margin: 0 50px 0 50px;
+}
+
+.fila {
+    /*Organización de los elementos dentro del comentario*/
+    display: flex;
+}
+
+.tiempo {
+    /*Estilizacion del hace cuando se posteo*/
+    color: rgb(112, 112, 112);
+    font-size: small;
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+.escrito {
+    /*Clase para hacer que el texto se contenga en el contenedor*/
+    text-align: left;
+    width: 800px;
+    word-wrap: break-word;
+    margin: 5px 0px 10px 0px;
+    color: #AAAAAA;
+}
+
+.space,
+.nvoto {
+    color: #AAAAAA;
+}

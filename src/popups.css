@@ -1,0 +1,143 @@
+/*Popups*/
+
+.Titulo_PopUp {
+    /*Estilizacion del titulo*/
+    background: -webkit-linear-gradient(rgba(6, 247, 255, 0.5) ,#AAAAAA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 1000;
+}
+
+.popup {
+    /*Estilización del contenedor que contiene todo el popup*/
+    z-index: 25;
+    background-color: #2a2f32 !important;
+    border-radius: 10px !important;
+    padding: 10px;
+    box-shadow: 0px 0px 20px #000;
+}
+
+.contras{
+    /*CSS PARA COLOCAR LAS CONTRASEÑAS EN LA MISMA LINEA*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+    .mitad>input{
+        /*CSS PARA EL TAMAÑO DE LAS CAJAS PARA ESCRIBIR LA CONTRASEÑA*/
+        width: 100%;
+    }
+
+.txtt {
+    /*Estilización de los titulos secundarios*/
+    color: rgba(6, 247, 255, 0.7);
+    font-size: large;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    width: 300px;
+}
+
+.postenedor {
+    /*Organización de los contenidos de los popups*/
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.postin {
+    /*TAMAÑO DE LOS INPUT*/
+    height: 40px;
+}
+
+.postbox {
+    /*Estilización del textarea y del input*/
+    border: 2px solid #AAAAAA;
+    color: #AAAAAA;
+    outline: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+    resize: none;
+}
+    .postbox:focus {
+        border: solid 2px #FFFFEE;
+    }
+
+::placeholder{
+    color: #AAAAAA;
+}
+
+.condiciones, .g-recaptcha{
+    /*COLOCACION CENTRADA DE CONDICIONES Y CAPTCHA*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .checkbox{
+        margin-right: 5px;
+    }
+
+.btnenviar {
+    /*Boton para enviar*/
+    background-color: transparent;
+    border: 2px solid #AAAAAA;
+    color: #AAAAAA;
+    font-weight: 700;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.btnenviar:hover,.file_label:hover {
+    background-color: #555555;
+}
+
+.btnimagen {
+    margin-bottom: 10px;
+}
+
+.w3-hover-red{
+    /*MODIFICACION DE LA ESQUINA IZQUIERDA SUPERIOR PARA QUE AL HACER HOVER TAMBIEN
+    SE VEA LA ESQUINA CON EL RADIO DE 10PX*/
+    border-start-end-radius: 10px;
+    border-end-start-radius: 10px;
+    color: #AAAAAA;
+}
+
+.txtt_img{
+    margin-left: 100px;
+}
+.img_pre{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+    .btnimagen{
+        display:none;
+    }
+    .file_label {
+        background-color: transparent;
+        border: 2px solid #AAAAAA;
+        height: auto;
+        color: #AAAAAA;
+        font-weight: 700;
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+    #preview{
+        border: 2px solid #AAAAAA;
+        width: 480px;
+        height: 261px;
+        padding: 0;
+    }
+        #preview>img{
+            margin: 0;
+            padding: 0;
+            width: 476px;
+            height: 257px;
+            object-fit: cover;
+        }

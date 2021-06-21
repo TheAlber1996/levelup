@@ -1,0 +1,647 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    /*background-image: url("../../../img/Wallpaper_inicio.jpg");*/
+    background-attachment: fixed;
+    background-position: 25%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 30px;
+}
+
+
+/*SECCION GENERAL*/
+
+.general {
+    /*Centrar el contenido de la pagina*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.botones {
+    /*Quitar la estilización de los botones*/
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.imgperf {
+    /*Estilización de la imagen de perfil*/
+    width: 35px;
+    height: 35px;
+}
+
+.ay {
+    /*Dejar los <a> como un texto normal*/
+    text-decoration: none;
+    color: rgba(6, 247, 255, 0.7);
+    font-weight: bold;
+}
+
+.tex {
+    /*Color de texto 1*/
+    color: #CCCCCC;
+    font-weight: 500;
+}
+
+.tex1 {
+    /*Color de texto 2*/
+    color: #AAAAAA;
+}
+
+.votoiconos {
+    /*Estilizacion de los botones del foro*/
+    background-color: transparent;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.votoiconos:hover {
+    /*Hover de los iconos del foro*/
+    background-color: rgb(100, 100, 100);
+    border-radius: 20px;
+}
+
+.votoiconos:active {
+    /*Al clicar los botones*/
+    background-color: rgb(116, 116, 116);
+}
+
+.votoiconos>img {
+    /*Estilizacion de los botones del foro*/
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.votos {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.icoforo {
+    /*Estilizacion de los botones del foro*/
+    background-color: transparent;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icoforo:hover {
+    /*Hover de los iconos del foro*/
+    background-color: rgb(100, 100, 100);
+    border-radius: 16px;
+}
+
+.icoforo:active {
+    /*Al clicar los botones*/
+    background-color: rgb(116, 116, 116);
+}
+
+
+/*CONTENEDOR CENTRAL*/
+
+.contenedor {
+    /*Ajuste del contenedor de la pagina*/
+    background-color: rgba(48, 48, 48, 0.349);
+    width: 800px;
+}
+
+
+/*MINI NAV1*/
+
+.nav1 {
+    /*contenedor del nav1*/
+    margin-top: 5px;
+    background-color: #2a2f32;
+    border-radius: 5px;
+    top: 5px;
+    position: sticky;
+    z-index: 2;
+    box-shadow: 0px 0px 10px #000;
+}
+
+.navegador1 {
+    /*contenido del nav1*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-direction: row;
+    flex-grow: 1;
+    padding: 17px;
+}
+
+.btnfiltro {
+    /*Ajuste de tamaño y del fondo del boton que hace toggle al filtro*/
+    background-color: transparent;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnfiltro:hover,
+.btnbusca:hover {
+    /*Hover en el boton de filtro y de busqueda*/
+    background-color: rgb(100, 100, 100);
+}
+
+.btnfiltro:active,
+.btnbusca:active {
+    /*Al clicar el boton de filtro o de busqueda*/
+    background-color: rgb(116, 116, 116);
+}
+
+.btnfiltro>img {
+    /*Ajuste de tamaño y del fondo del boton que hace toggle al filtro*/
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.input {
+    /*Estilizado del input de busqueda en el foro*/
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 500px;
+    height: 26px;
+    border: 2px solid #AAAAAA;
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 0px 16px;
+    outline: none;
+    border-radius: 10px;
+    color: #AAAAAA;
+}
+
+.input:hover {
+    /*Estilizado del input de busqueda en el foro*/
+    background-color: #555555;
+}
+
+.inputbusca {
+    width: 600px;
+}
+
+.btnbusca {
+    /*Estilizado del boton usado para buscar*/
+    width: 60px;
+    height: 26px;
+    background-color: transparent;
+    border: 2px solid #AAAAAA;
+    border-radius: 13px;
+    color: #AAAAAA;
+}
+
+
+/*MINI NAV2*/
+
+.nav2 {
+    /*contenedor del nav2*/
+    margin-top: 1%;
+    background-color: #2a2f32;
+    box-shadow: 0px 0px 10px #000;
+    border-radius: 5px;
+}
+
+.navegador2 {
+    /*contenido del nav2*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-direction: row;
+    flex-grow: 1;
+    /*provisional*/
+    padding: 17px;
+}
+
+#perfnav {
+    /*Color de fondo de la imagen de perfil de la nav*/
+    background-color: transparent;
+}
+
+.imgpost,
+.linkpost {
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+}
+
+.imgpost>img,
+.linkpost>img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.imgpost:hover,
+.linkpost:hover,
+.btnperf:hover {
+    background-color: rgb(100, 100, 100);
+    border-radius: 30px;
+}
+
+
+/*Búsqueda de temas o usuarios*/
+
+.fallo {
+    text-align: center;
+    color: white;
+}
+
+
+/*CONTENIDO MEMES*/
+
+.content {
+    margin-top: 1%;
+}
+
+.conimagen {
+    /*Contenedor donde aparecen los memes con imagenes*/
+    border-radius: 5px;
+    margin-top: 1%;
+    background-color: transparent;
+}
+
+.solotexto {
+    /*Contenedor donde aparecen los memes con solo texto*/
+    margin-top: 1%;
+    background-color: #2a2f32;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #000;
+}
+
+.hud {
+    /*Hacer las tarjetas un poco mas anchas*/
+    padding-top: 3px;
+    padding-bottom: 5px;
+    background-color: transparent;
+}
+
+.titulo {
+    /*Espacio para que quepan las letras como la y*/
+    margin-bottom: 5px;
+}
+
+.imgperf {
+    /*Hacer que las imagenes de perfil se ajusten al estandard de 26x26 */
+    width: 26px;
+    height: 26px;
+    border-radius: 20px;
+}
+
+.posteador {
+    /*Contenedor del nombre y la imagen de perfil del que ha hecho el post*/
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    flex-direction: row;
+    align-items: flex-end;
+    max-height: 26px;
+    margin-left: 5px;
+}
+
+.nombrepos {
+    /*Espacio entre la imagen de perfil y el nom de usuario*/
+    margin-left: 5px;
+}
+
+.tiempo {
+    color: rgb(112, 112, 112);
+    font-size: small;
+    margin-left: 7px;
+}
+
+.nombreforo {
+    /*Colocacion del div de la tag del foro al que pertenece el contenido*/
+    margin-right: 10px;
+    margin-left: auto;
+}
+
+.foro {
+    /*Estilización de la tag */
+    background-color: rgb(90, 90, 90);
+    border: 1px solid rgb(48, 48, 48);
+    border-radius: 8px;
+    padding: 2px;
+    font-size: 13px;
+}
+
+.head {
+    /*Contenedor del titulo y el boton de share*/
+    display: flex;
+    flex-direction: row;
+    margin-left: 5px;
+    margin-top: 5px;
+    padding-left: 25px;
+}
+
+.titulos {
+    font-size: 25px;
+    font-weight: bold;
+    color: #AAAAAA;
+}
+
+.fondo {
+    /*Color de fondo para la imagen de perfil en las tarjetas*/
+    background-color: rgb(59, 59, 59);
+}
+
+.btnshare {
+    /*Aujstar el boton de compartir a la derecha*/
+    margin-right: 10px;
+    margin-left: auto;
+}
+
+.share {
+    /*Centrar el texto y la imagen en el interior del boton share*/
+    display: flex;
+}
+
+.share>img {
+    /*Centrar el texto y la imagen en el interior del boton share*/
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.post {
+    /*Adaptabilidad del boton donde aparece el post*/
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.imagen_foro {
+    /*Adaptabilidad de la imagen */
+    background-color: transparent;
+    padding: 10px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.container {
+    /*Adaptabilidad contenedor vídeo*/
+    text-align: center;
+}
+
+.responsive-iframe {
+    /*Adaptabilidad vídeo*/
+    width: 100%;
+    height: 100%;
+}
+
+.bot {
+    /*Boton que contiene al texto*/
+    max-width: 100%;
+    background-color: transparent;
+}
+
+.texto {
+    /*Donde aparece el texto del post (memes)*/
+    padding: 10px 20px;
+    text-align: left;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.botoncitos {
+    /*La barra de abajo del contenido donde estan los botones like dislike etc*/
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.votaciones {
+    /*div que contiene solo dislike like y la cantidad de votos*/
+    margin-left: 10px;
+    width: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comentarios {
+    /*div que contiene solo el boton de comentarios*/
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comentarios>img {
+    /*div que contiene solo el boton de comentarios*/
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+}
+
+.btnsave {
+    margin-right: 10px;
+    background-color: transparent;
+}
+
+.guardar {
+    /*Ajustar el boton de guardar a la derecha, centrar el texto y la imagen en su interior */
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.guardar>img {
+    /*Ajustar el boton de guardar a la derecha, centrar el texto y la imagen en su interior */
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+}
+
+.guardar input {
+    /*Ajustar el boton de guardar a la derecha, centrar el texto y la imagen en su interior */
+    background-color: transparent;
+    border: none;
+}
+
+.space,
+.nvoto {
+    /*span para dar espacio entre los iconos y botones*/
+    margin-left: 5px;
+    color: #AAAAAA;
+}
+
+#guar {
+    background-color: transparent;
+}
+
+
+/*FILTRO*/
+
+.filter {
+    /* Contenedor del filtro*/
+    width: 190px;
+    display: none;
+    position: absolute;
+    background-color: #2a2f32;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: -200px;
+}
+
+.contenido {
+    /*Contenedor de todos los elementos del filtro*/
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.recientes,
+.likeados,
+.top,
+.controversiales {
+    /*Ordenar los elementos del filtro */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.recientes>img,
+.likeados>img,
+.top>img,
+.controversiales>img {
+    /*Ordenar los elementos del filtro */
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.btn_foro {
+    /*Estilizado de los botones del fintro*/
+    background-color: transparent;
+    color: #AAAAAA;
+    border: 1px solid rgb(48, 48, 48);
+    border-radius: 8px;
+    padding: 2px;
+    margin-left: 8px;
+}
+
+.btn_foro:hover {
+    /*Hover de los botones en el filtro*/
+    background-color: rgb(100, 100, 100);
+}
+
+.btn_foro:active {
+    /*Al clicar en los botones del filtro*/
+    background-color: rgb(80, 80, 80);
+}
+
+
+/*Adaptabilidad*/
+
+@media(max-width:1000px) {
+    /*Contenedor general*/
+    .contenedor {
+        width: 99%;
+    }
+}
+
+@media(max-width:1200px) {
+    /*FILTRO*/
+    .filter {
+        width: auto;
+        display: none;
+        position: relative;
+        background-color: #2a2f32;
+        border-radius: 5px 5px 0px 0px;
+        padding: 5px;
+        padding-top: 15px;
+        margin-bottom: 5px;
+        margin-left: 0px;
+    }
+    .contenido {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .recientes,
+    .likeados,
+    .top,
+    .controversiales {
+        margin-left: 10px;
+    }
+}
+
+.show {
+    /*Clase usada para mostrar el dropdown usando js*/
+    display: block;
+}
+
+
+/*Título para favoritos*/
+
+.title_favoritos {
+    color: white;
+    text-align: center;
+    font-size: 60px;
+}
+
+
+/*Error cuando no hay nada en favoritos*/
+
+.error {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    background-color: red;
+    margin-top: 50px;
+}
+
+
+/*BOTON SUBIR ARRIBA*/
+
+.ir-arriba {
+    /*Estilización del botón, hacer que no aparezca al principio*/
+    display: none;
+    border-radius: 10%;
+    background: rgb(0, 0, 0);
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    z-index: 100;
+}
+
+.ir-arriba:hover {
+    color: #FFF;
+    background-color: #353535;
+}
+
+.box__button__container {
+    font-size: 15px;
+    z-index: 1;
+}

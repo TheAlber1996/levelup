@@ -1,0 +1,36 @@
+body {
+    background: #aaa;
+  }
+  
+
+  #container {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 400px;
+    height: 400px;
+    background: #444;
+    
+    overflow: auto;
+  }
+  
+
+  #flex-scroll {
+    padding: 30px 20px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  
+  .box {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .box:nth-child(3n-2) { background-color: #EF5350; }
+  .box:nth-child(3n-1) { background-color: #2E7D32; }
+  .box:nth-child(3n) { background-color: #03A9F4; }

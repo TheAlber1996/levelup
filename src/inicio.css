@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+
+/*GENERAL*/
+
+body {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.diseccion {
+    /*Hacer que el contenido de la seccion se vaya al centro de la pantalla*/
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+}
+
+.sliderNoticias{
+    background-color: transparent;
+}
+
+.sliderNoticias>img,
+.sliderTendencias>img,
+.sliderPeq>img {
+    /*Adaptabilidad de las imagenes*/
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    background-color: rgb(58, 58, 58);
+    border-radius: 20px;
+}
+
+.divtext{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+    .colorblack{
+        color: #000;
+        -webkit-text-stroke: 1px #AAAAAA;
+    }
+    .colorgrey{
+        color: #AAAAAA;
+        -webkit-text-stroke: 2px black;
+    }
+    .divtext>span,
+    .divchatea>span{
+        width: 100%;
+        font-size: 38px;
+        font-weight: bold;
+    }
+.divchatea{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 30%;
+    height: 100%;
+    margin-left: 100px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.divtextTendencias{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+    .divtextTendencias>span{
+        background-color: #AAAAAA;
+        margin-top: 2px;
+        margin-right: 10px;
+        padding: 0 3px 0 3px;
+        border-radius: 10px;
+    }
+
+.flex {
+    /*Clase para crear un flex en linea recta*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.bots {
+    /*Quitar la estilización de los botones*/
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: rgb(58, 58, 58);
+    border-radius: 20px;
+}
+
+
+/*LAS NOTICIAS*/
+
+.left {
+    /*Contenedor de los 3 carruseles*/
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.noticia {
+    /*Noticia importante de arriba*/
+    background-color: transparent;
+    height: 450px;
+    width: 960px;
+    margin-bottom: 10px;
+    position: relative;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.secundario {
+    /*Organización del contenedor de los carruseles de abajo*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.tendencias {
+    /*carrusel pequeño de la izquierda*/
+    background-color: rgb(58, 58, 58);
+    position: relative;
+    border-radius: 20px;
+}
+
+.noticiasPeq {
+    /*carrusel pequeño de la derecha*/
+    background-color: rgb(58, 58, 58);
+    margin-left: 10px;
+    position: relative;
+    border-radius: 20px;
+}
+
+.sliderTendencias>img,
+.sliderPeq>img {
+    /*Ajuste del tamaño de las imagenes que contienen los carruseles de abajo*/
+    height: 250px;
+    width: 475px;
+}
+
+.sliderNoticias>img {
+    /*Ajuste del tamaño de las imagenes que contienen los carrusel de arriba*/
+    width: 960px;
+    height: 450px;
+}
+
+
+/*GRUPOS DE LA DERECHA*/
+
+.right {
+    /*Ajustar el maximo de anchura de la sección derecha*/
+    width: 320px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.grupos {
+    /*Override de la clase flex para que me los ponga en columna*/
+    flex-direction: column;
+    overflow: auto;
+    height: 720px;
+}
+
+.grupo {
+    /*Tamaño, fondo y animación de los grupos*/
+    padding: 10px;
+    background-color: #2a2f32;
+    box-shadow: 0px 0px 10px #000;
+    width: 300px;
+    min-height: 100px;
+    max-height: 300px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    border: none;
+}
+
+.grupo:hover {
+    /*Animación de la carta de grupo al hacer hover*/
+    background-color: rgb(0, 142, 170);
+    box-shadow: 4px 5px 10px rgb(3, 74, 88);
+    transform: translateY(-3px);
+}
+
+.grupo:hover>p,
+.grupo:hover>div>.usuarios {
+    /*Animación de la carta de grupo al hacer hover*/
+    color: #000;
+}
+
+.cero{
+    /*SI NO HAY GRUPOS PARA MOSTRAR*/
+    height: 100%;
+    max-height: none;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+    .cero>span{
+        color: #AAAAAA;
+    }
+
+.perfnom {
+    margin-bottom: 5px;
+}
+
+.imgGrupo {
+    /*TAMAÑO DE LA IMAGEN DE LOS GRUPOS*/
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.gruponom {
+    /*Margen entre la imágen y el nombre del grupo*/
+    margin-left: 15px;
+    font-weight: bold;
+    color: rgba(6, 247, 255, 0.7);
+}
+
+.usuarios {
+    /*Colocacion de usuarios a la derecha del flex*/
+    margin-left: auto;
+    color: #AAAAAA;
+    font-weight: bold;
+}
+
+.descGrupo {
+    text-align: left;
+    color: #AAAAAA;
+    font-weight: 500;
+}
+
+
+/*Scrollbar de los grupos*/
+
+.grupos::-webkit-scrollbar {
+    width: 10px;
+}
+
+.grupos::-webkit-scrollbar-track {
+    margin-top: 10px;
+    background-color: transparent;
+}
+
+.grupos::-webkit-scrollbar-thumb {
+    background-color: rgb(153, 147, 140);
+    border-radius: 10px;
+}
+
+
+/*ADAPTABILIDAD*/
+
+@media (max-height: 800px) {
+    .contenedor {
+        margin-top: auto;
+    }
+}
+
+@media (max-width: 1350px) {
+    .contenedor {
+        margin-top: auto;
+        padding-bottom: 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .right {
+        width: 960px;
+    }
+    .grupos {
+        height: 300px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .grupo {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .perfnom {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .diseccion {
+        height: 70%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+    }
+}

@@ -1,0 +1,869 @@
+/*CSS PÁGINA DE PERFIL USUARIOS*/
+
+html,
+* {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background: rgb(48, 48, 48);
+    ;
+}
+
+
+/*Diseño filas de las ventanas emergentes*/
+
+.fila {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/*Se aplica a todas las clases que empiecen por fila_*/
+
+[class*="fila_"] {
+    padding: 10px 10px 10px;
+    box-sizing: border-box;
+}
+
+
+/*Filas al 50%*/
+
+.fila_50 {
+    width: 50%;
+}
+
+
+/*Filas al 100%*/
+
+.fila_100 {
+    width: 100%;
+}
+
+
+/*BANNER*/
+
+
+/*Posición general de la sección del banner*/
+
+.seccion_banner {
+    position: relative;
+}
+
+
+/*Edición del banner*/
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*Ajuste de la imagen del banner*/
+
+.banner img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    /*Cubrir todo el espacio*/
+}
+
+
+/*Da un degradado negro a la imagen del banner*/
+
+.banner .degradado {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, .95) 10%, transparent);
+    /*Degradado en negro no muy marcado*/
+}
+
+
+/*NOMBRE, TÍTULO Y FOTO DE PERFIL*/
+
+
+/*Posición del nombre y título del usuario*/
+
+.cabecera {
+    z-index: 1;
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 80%;
+    padding: 0 40px 0;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    /*Ajusta las letras con espacio antes, entre y después de ellas*/
+    align-items: center;
+    box-sizing: border-box;
+    pointer-events: none;
+    /*Se quita el efecto de ratón*/
+}
+
+
+/*Ajustes finales del nombre y título del usuario*/
+
+.cabecera .datos_usuario {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 240px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/*Personalización del nombre del usuario*/
+
+.cabecera .datos_usuario .nombre_usuario {
+    width: 100%;
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+    /*El texto no hace salto de línea*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*Si el texto es muy largo pone puntos suspensivos (...)*/
+    text-shadow: 5px 5px 10px #000000;
+}
+
+
+/*Personalización del título del usuario*/
+
+.cabecera .datos_usuario .titulo_usuario {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, .8);
+    font-style: italic;
+    white-space: nowrap;
+    /*El texto no hace salto de línea*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*Si el texto es muy largo pone puntos suspensivos (...)*/
+}
+
+
+/*Posición del avatar del usuario*/
+
+.cabecera .perfil_usuario {
+    position: relative;
+    width: 200px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: flex-start;
+    /*La posición es al principio del todo*/
+    align-items: center;
+}
+
+
+/*Personalización del avatar del usuario*/
+
+.cabecera .perfil_usuario .imagen_usuario {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgb(160, 159, 159);
+    pointer-events: auto;
+    /*El efecto al pasar el ratón es por defecto*/
+}
+
+
+/*Ajustes de la imagen del avatar del usuario*/
+
+.cabecera .perfil_usuario .imagen_usuario img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    /*Cubre todo el radio*/
+    outline: none;
+    /*Sin borde exterior para no solaparlo con el radio*/
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+
+/*PESTAÑAS DE INFORMACIÓN DEL USUARIO*/
+
+
+/*Menú de navegación de pestañas*/
+
+.cabecera .menu_pestañas {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    /*Empieza por el final, y no por el principio*/
+    box-sizing: border-box;
+}
+
+
+/*Ajustes del menú de opciones*/
+
+.lista_opciones {
+    width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 50px;
+    box-shadow: 0px 3px 6px -2px rgba(0, 0, 0, 0.15);
+    pointer-events: auto;
+    box-sizing: border-box;
+}
+
+
+/*Ajustes de los items del menú de opciones*/
+
+.lista_opciones .lista_opciones_items {
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+/*Ajustes del principio del recuadro del menú de opciones*/
+
+.lista_opciones .lista_opciones_items:first-child>.boton_item {
+    border-radius: 50px 0px 0px 50px;
+}
+
+
+/*Ajustes del final del recuadro del menú de opciones*/
+
+.lista_opciones .lista_opciones_items:last-child>.boton_item {
+    border-radius: 0 50px 50px 0;
+}
+
+
+/*Diseño de los botones del recuadro del menú de opciones*/
+
+.lista_opciones .lista_opciones_items .boton_item {
+    position: relative;
+    font-family: "Roboto";
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, .6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    transition: .25s all ease-in-out;
+}
+
+
+/*Diseño del icono de los botones del menú de opciones*/
+
+.lista_opciones .lista_opciones_items .boton_item i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+
+/*Diseño del icono de los botones del menú de opciones al pasar el ratón por encima*/
+
+.lista_opciones .lista_opciones_items .boton_item:hover {
+    color: #000;
+}
+
+
+/*Diseño del icono de los botones del menú de opciones al estar activado*/
+
+.lista_opciones .lista_opciones_items .boton_item.boton_activado {
+    color: #2A6FFE;
+}
+
+
+/*Diseño del icono de los botones del menú de opciones*/
+
+.lista_opciones .lista_opciones_items .boton_item::before {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 6px;
+    height: 6px;
+    background: #2a6ffe;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: .0s;
+}
+
+
+/*Se añade al principio el icono de los botones del menú de opciones*/
+
+.lista_opciones .lista_opciones_items .boton_item.boton_activado::before {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0px);
+    transition: .25s;
+}
+
+
+/*Posición página desplegable*/
+
+.paginas_desplegables {
+    position: relative;
+    width: 80%;
+    margin: 60px auto;
+    box-sizing: border-box;
+}
+
+
+/*Diseño página desplegable*/
+
+.paginas_desplegables .seccion_ventana {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 60px 30px 30px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 3px 6px -2px rgba(0, 0, 0, .1);
+    box-sizing: border-box;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: 0s;
+}
+
+
+/*Botón pequeño que aparece al salir la página desplegable*/
+
+.paginas_desplegables .seccion_ventana.boton_activado {
+    position: absolute;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0px);
+    transition: all .25s ease-in-out;
+}
+
+
+/*Diseño título página desplegable*/
+
+.paginas_desplegables .seccion_ventana .titulo_ventana {
+    position: relative;
+    padding: 0 10px 0;
+    font-size: 25px;
+    color: #222;
+    font-weight: bold;
+}
+
+
+/*Contenido de las pestañas general*/
+
+.contenido_ventana a {
+    text-decoration: none;
+    color: #000;
+}
+
+.publication {
+    margin-bottom: 20px;
+}
+
+
+/*Posición contenido página desplegable*/
+
+.paginas_desplegables .seccion_ventana .contenido_ventana {
+    margin-top: 30px;
+    padding: 0;
+}
+
+
+/*Diseño contenido página desplegable*/
+
+.seccion_ventana .contenido_ventana .grupo_contenido {
+    position: relative;
+    box-sizing: border-box;
+}
+
+
+/*Diseño etiqueta título página desplegable*/
+
+.seccion_ventana .contenido_ventana .grupo_contenido .titulo_etiqueta_contenido {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/*Diseño caja de contenido de las páginas desplegable*/
+
+.seccion_ventana .contenido_ventana .grupo_contenido .caja_contenido {
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    padding: 13px;
+    border: 1px solid rgba(0, 0, 0, .08);
+    font-size: 16px;
+    font-weight: 400;
+    box-sizing: border-box;
+    transition: all .25s ease-in-out;
+}
+
+
+/*Diseño caja de contenido desactivadas de las páginas desplegable*/
+
+.seccion_ventana .contenido_ventana .grupo_contenido .caja_contenido:disabled {
+    background: #f5f5f5;
+    color: #444;
+    cursor: not-allowed;
+}
+
+
+/*Diseño caja de contenido de las páginas desplegable al pulsarlas*/
+
+.seccion_ventana .contenido_ventana .grupo_contenido .caja_contenido:focus {
+    border-color: #2A6FFE;
+}
+
+
+/*Posición icono dentro de la caja de contenido de las páginas desplegable*/
+
+.seccion_ventana .contenido_ventana .grupo_contenido.icono_contenido .caja_contenido {
+    padding-left: 33px;
+}
+
+
+/*Diseño icono dentro de la caja de contenido de las páginas desplegable*/
+
+
+/*Diseño icono dentro de la caja de contenido de las páginas desplegable al pulsar la caja*/
+
+.seccion_ventana .contenido_ventana .grupo_contenido.icono_contenido .caja_contenido:focus~i {
+    color: #2A6FFE;
+}
+
+
+/*DISEÑO PANTALLAS PEQUEÑAS*/
+
+@media only screen and (max-width: 991px) {
+    [class*="fila_"] {
+        width: 100%;
+    }
+    .cabecera .datos_usuario .nombre_usuario {
+        font-size: 25px;
+    }
+    .cabecera .datos_usuario .titulo_usuario {
+        font-size: 14px;
+    }
+    .lista_opciones .lista_opciones_items .boton_item span {
+        display: none;
+    }
+}
+
+
+/*DISEÑO TABLETS*/
+
+@media only screen and (max-width: 767px) {
+    .banner img {
+        height: 200px;
+    }
+    .cabecera {
+        flex-wrap: wrap;
+        width: 90%;
+        bottom: -160px;
+    }
+    .cabecera .datos_usuario {
+        text-align: center;
+        top: -70px;
+        left: 0;
+        padding-left: 0;
+    }
+    .cabecera .datos_usuario .nombre_usuario {
+        font-size: 22px;
+    }
+    .cabecera .datos_usuario .titulo_usuario {
+        font-size: 13px;
+    }
+    .cabecera .perfil_usuario {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .cabecera .perfil_usuario .imagen_usuario {
+        margin: 0 auto;
+        width: 180px;
+        height: 180px;
+    }
+    .cabecera .perfil_usuario .imagen_usuario img {
+        width: 180px;
+        height: 180px;
+    }
+    .paginas_desplegables {
+        margin: 130px auto;
+        width: 95%;
+    }
+    .paginas_desplegables .seccion_ventana {
+        padding: 60px 20px 20px;
+    }
+    .paginas_desplegables .seccion_ventana .titulo_ventana {
+        text-align: center;
+        font-size: 22px;
+    }
+}
+
+
+/*DISEÑO MÓVILES*/
+
+@media only screen and (max-width: 575px) {
+    .cabecera {
+        bottom: -150px;
+    }
+    .cabecera .datos_usuario {
+        top: -60px;
+    }
+    .lista_opciones .lista_opciones_items .boton_item {
+        padding: 15px 10px 15px;
+        font-size: 13px;
+    }
+    .lista_opciones .lista_opciones_items .boton_item i {
+        font-size: 15px;
+        margin-right: 5px;
+    }
+    .paginas_desplegables {
+        margin: 130px auto;
+    }
+}
+
+
+/*ICONOS*/
+
+#youtube_icon {
+    color: red;
+}
+
+#steam_icon {
+    color: #2a475e;
+}
+
+#twitter_icon {
+    color: #1bbcfb;
+}
+
+#twich_icon {
+    color: #6441A4;
+}
+
+#user_icon {
+    color: black;
+}
+
+
+/*BOTÓN*/
+
+.boton_guardar {
+    background-color: #3682f4;
+    border-radius: 4px;
+    border-bottom: 4px solid #1a70f1;
+    box-shadow: 0px 7px 15px #4f91f3;
+    color: #fff;
+    width: calc(80% - 20px);
+    height: 50px;
+    margin: 0 10%;
+    margin-top: 22px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.boton_guardar:active {
+    background-color: rgb(154, 191, 247);
+}
+
+
+/*FORMULARIO REPORTAR*/
+
+
+/*¿Has tenido problemas con el usuario?*/
+
+.problemas {
+    text-align: center;
+}
+
+
+/*Centrar botón*/
+
+.centrado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*Diseño botón*/
+
+.boton_reportar {
+    margin-top: 20px;
+    cursor: pointer;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 19px;
+    border: 2px solid #f01e1e;
+    background-color: #ff1e00;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: .3s;
+}
+
+
+/*Posición y diseño ventana emergente*/
+
+.ventana_formulario {
+    display: none;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    transition: .5s;
+    /*Tiempo en salir ventana emergente*/
+}
+
+
+/*Diseño dentro de ventana*/
+
+.ventana_formulario .formulario {
+    top: 2em;
+    max-width: 700px;
+    background: white;
+    padding: 50px;
+    position: absolute;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    border-style: solid;
+}
+
+
+/*Diseño dentro de ventana*/
+
+.titulo_formulario {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+/*Botón cerrar formulario*/
+
+.cerrar_formulario {
+    border-bottom-left-radius: 15px;
+    border-start-end-radius: 11px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    cursor: pointer;
+    padding: 10px 12px;
+    background-color: #ff1e00;
+    border: 2px solid #ff1e00;
+    color: #ffffff;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+.cerrar_formulario:hover {
+    background-color: #dd604f;
+    border: 2px solid #dd604f;
+}
+
+.send-form {
+    cursor: pointer;
+    padding: 10px 30px;
+    background-color: #83b566;
+    border: 2px solid #83b566;
+    color: #ffffff;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+.form-control:focus {
+    border-color: #83b566;
+    box-shadow: 0 0 0 0.2rem rgba(131, 181, 102, 0.25);
+}
+
+.success-message {
+    text-align: center;
+}
+
+.success-message h1 {
+    color: #ffffff;
+    margin-top: 3em;
+}
+
+
+/*Textarea*/
+
+textarea {
+    margin-top: 12px;
+    resize: none;
+    /*Evita que se pueda agrandar*/
+}
+
+
+/*Título cambiar imágenes*/
+
+.titulo_imagenes {
+    padding: 30px 10px 0;
+}
+
+
+/*Botones de subir imágenes de Avatar y Banner*/
+
+input[type="file"] {
+    display: none;
+}
+
+.boton-file-avatar {
+    width: 80px;
+    margin: 80px auto;
+    padding: 10px 12px;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    background-color: #F44336;
+    border-radius: 4px;
+    border-bottom: 4px solid #cb2619;
+    box-shadow: 0px 7px 15px #f56c6c;
+    overflow: hidden;
+}
+
+.boton-file-avatar:active {
+    margin-top: 82px;
+    border-bottom-width: 2px;
+    box-shadow: 0px 5px 13px #ea4539;
+}
+
+.boton_guardar_imagen {
+    border: none;
+    outline: none;
+    width: 120px;
+    padding: 10px 12px;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    background-color: #3682f4;
+    border-radius: 4px;
+    border-bottom: 4px solid #1a70f1;
+    box-shadow: 0px 7px 15px #4f91f3;
+    overflow: hidden;
+}
+
+.boton_guardar_imagen:active {
+    border-bottom-width: 2px;
+    box-shadow: 0px 5px 13px #4f91f3;
+}
+
+
+/*ARREGLOS MADE IN CRISTIAN*/
+
+
+/*PUBLICACIONES*/
+
+.con {
+    /*Organizar las publicaciones para que salgan bien*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.con img {
+    /*Formato de la imagen*/
+    height: auto;
+    width: 750px;
+}
+
+.espac {
+    /*Espacio entre los post*/
+    margin-top: 20px;
+}
+
+.texto {
+    /*Hacer que el texto se ajuste al hueco*/
+    padding: 10px 20px;
+    text-align: left;
+    max-width: 750px;
+    word-wrap: break-word;
+}
+
+.separator {
+    /*Estilo del separador*/
+    width: 90%;
+    height: 5px;
+    background-color: rgb(131, 131, 131);
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.publication {
+    /*Estilo del titulo de las publicaciones*/
+    font-size: 30px;
+    font-weight: 700;
+    border: solid 2px rgb(98, 105, 126);
+    border-style: none none solid none;
+}
+
+.publication>a {
+    /*Color del titulo*/
+    color: #2a475e;
+}
+
+
+/*COMENTARIOS*/
+
+.comentarioss {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: center;
+}
+
+.comentarioss>a {
+    margin-top: 15px;
+    margin-left: 10%;
+    font-size: 19px;
+    font-weight: 400;
+}

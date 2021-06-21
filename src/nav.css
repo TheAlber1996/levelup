@@ -1,0 +1,347 @@
+/*CLASES GENERALES*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.flexeando {
+    /*Organización de multiples display flex en varios sitios de la nav*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.txt {
+    /*Espacio entre los textos e imagenes*/
+    margin-left: 5px;
+}
+
+.espacio {
+    /*espacio entre las varias partes de la navbar*/
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.conex {
+    /*Estilizado de los botones */
+    font-size: 15px;
+    border-radius: 4px;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.conex:active {
+    /*Hover de los botones*/
+    background-color: rgb(100, 100, 100);
+}
+
+
+/*NAVBAR*/
+
+.contenido_nav {
+    /*Organización del contenedor de los elementos padre*/
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(44, 44, 44);
+    align-items: flex-start;
+    justify-content: flex-end;
+    color: rgb(190, 190, 190);
+    padding: 10px 100px 10px 100px
+}
+
+.nomlogo {
+    /*Colocacion del logo y su texto a la izquierda del flex*/
+    margin-left: 10px;
+    margin-right: auto;
+}
+
+.nomlogo span {
+    /*Hacer el texto del logo mas grande*/
+    font-size: large;
+}
+
+.lef {
+    /**/
+    margin-left: 10px;
+}
+
+.up {
+    /*Estilizacion del UP*/
+    color: rgba(6, 247, 255, 0.7);
+    font-weight: bolder;
+}
+
+.contenido_nav a {
+    /*Estilización de los botones*/
+    color: rgb(190, 190, 190);
+    text-decoration: none;
+}
+
+.btn_nav {
+    /*Drale margen solo a los botones de la izquierda*/
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.btn_nav:hover>a {
+    /*Hover de los botones*/
+    color: rgb(255, 255, 255);
+}
+
+.separador {
+    /*Estilización del separador entre los iconos y los botones*/
+    border-left: 2px solid rgb(133, 133, 133);
+    height: 30px;
+    margin-right: 15px;
+}
+
+.brillo {
+    /*Estilizacion de los iconos del nav*/
+    padding-left: 2px;
+    padding-right: 2px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brillo:hover {
+    /*Hover de los iconos del nav*/
+    background-color: #555555;
+    border-radius: 15px;
+}
+
+.brillo:active {
+    /*Al clicar los iconos del nav*/
+    background-color: rgb(80, 80, 80);
+}
+
+.chat>a {
+    /*Sobreescribir el margin right de 10 px de contenido para que no quede feo*/
+    margin-right: 0;
+}
+
+.notificaciones:hover {
+    background-color: rgb(44, 44, 44);
+}
+
+.img_off,
+.img_perfil {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.iconos {
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+}
+
+
+/*DROPDOWN y su boton*/
+
+.btndrop,
+.btndrop1 {
+    /*estilización del boton que se usa para hacer el dropdown*/
+    background-color: rgb(44, 44, 44);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.imgdropdown {
+    /*localización y color de fondo del dropdown*/
+    display: none;
+    position: absolute;
+    background-color: rgb(44, 44, 44);
+    z-index: 1;
+    box-shadow: 0px 0px 10px #000;
+}
+
+.imgdropdown a,
+.imgdropdown .btn_limpio {
+    /*Estilizar los elementos de la lista*/
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+.btn_limpio {
+    /*Boton de cerrar sesion, chapuza hecha por alberto*/
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.nombre_user {
+    /*Estilizacion de nombre de usuario una vez conectado*/
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.dropdown a:hover,
+.dropdown .btn_limpio:hover {
+    background-color: rgb(155, 155, 155);
+}
+
+#lista {
+    list-style-type: none;
+}
+
+/*CSS PARA TODO EL DROPDOWN DE NOTIFICACIONES*/
+.imgdropdown1 {
+    /*localización y color de fondo del dropdown*/
+    margin-top: 5px;
+    min-height: 100px;
+    right: 220px;
+    display: none;
+    position: absolute;
+    z-index: 3;
+    background-color: rgb(44, 44, 44);
+    box-shadow: 0px 0px 10px #000;
+}
+    .tit_notificaciones{
+        /*Centrar label con titulo*/
+        width: 100%;
+        font-size: 25px;
+        text-align: center;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #AAAAAA;
+    }
+    .list_notification {
+        /*CSS DEL INTERIOR DEL DESPLEGABLE DE NOTIFICACIONES*/
+        max-height: 500px;
+        min-height: 50px;
+        width: 350px;
+        list-style-type: none;
+        overflow-y: auto;
+    }
+    .list_notification::-webkit-scrollbar {
+        display: none;
+    }
+    .notify {
+        /*COLOCACION DEL INTERIOR DE CADA NOTIFICACION*/
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #AAAAAA;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+    .notify:last-child {
+        border: none
+    }
+        .notify>img {
+            /*COLOCACION DEL INTERIOR DE CADA NOTIFICACION*/
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+        }
+        .notify>label {
+            /*COLOCACION DEL INTERIOR DE CADA NOTIFICACION*/
+            margin-left: 7px;
+            margin-right: 7px;
+            width: 210px;
+        }
+        .notify>a {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+            .notify>a:hover {
+                background-color: #555555;
+                border-radius: 18px;
+            }
+        .bt_notify{
+            width: 30px;
+            height: 30px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border: none;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #AAAAAA;
+        }
+        .bt_notify:hover{
+            background-color: #555555;
+            border-radius: 15px;
+        }
+            .bt_notify>img {
+                /*COLOCACION DEL INTERIOR DE CADA NOTIFICACION*/
+                width: 18px;
+                height: 18px;
+                object-fit: contain;
+            }
+    .sinntf{
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+.show {
+    /*Clase usada para mostrar el dropdown usando js*/
+    display: block;
+}
+
+/*Registro - Inicio sesion*/
+
+.w3-container {
+    /*Sobreescribir la pedazo de mierda de clase del boostrap de mierda, mierda*/
+    padding: 5px !important;
+}
+
+.botones {
+    /*Quitar la estilización de los botones*/
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.condiciones{
+    /*Textbox de las condiciones y privacidad*/
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.enlaces{
+    /*Enlaces que lleven a otras páginas*/
+    text-decoration: underline;
+}
+
+
+.g-recaptcha{
+    /*Captcha*/
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+/**
+ * CAMBIAR EL COLOR DE LETRA DE LOS SWALALERT
+ */
+.swal2-title {
+    color: #AAAAAA;
+    font-weight: bold;
+}
+
+/*CAMBIAR EL COLOR DE LETRA DE LOS SWALALERT*/
+.swal2-html-container {
+    color: #AAAAAA;
+}

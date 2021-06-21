@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/*GENERAL*/
+
+body {
+    background-image: url("../../../img/tienda_fondos.png");
+    background-attachment: fixed;
+    background-position: 25%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.flex {
+    /*Clase para crear un flex en linea recta*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.botones {
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.lis>li>a {
+    /*hacer que los a no tengan color morado y subrayado*/
+    text-decoration: none;
+    color: white;
+}
+
+
+/*CONTENEDOR MENÚ*/
+
+.sidebar {
+    /*Estilo del menú que aparece a la derecha*/
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    left: 0;
+    background-color: rgb(53, 53, 53);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    /*Estilo de los a que hay en el menú*/
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 8px 8px 8px 20px;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #0066ff;
+}
+
+.link_actual{
+    color: rgb(243, 59, 35) !important;
+    cursor: context-menu;
+}
+
+
+.sidebar .closebtn {
+    /*Estilo del boton de cerrar la ventana*/
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.openbtn {
+    /*Estilo del botón para abrir el filtro*/
+    font-size: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: rgb(50, 135, 146);
+}
+
+
+/*LISTA MENU*/
+
+.banda {
+    /*Estilo de la banda que contiene el boton del filtro y la frase*/
+    width: 100%;
+    height: 50px;
+    background-color: rgb(194, 194, 194);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.categorias {
+    /*Hacer que lo que este en la banda se centre*/
+    align-items: center;
+}
+
+.doguecoin {
+    /*Moneda*/
+    width: 30px;
+    height: 30px;
+}
+
+.lista {
+    /*Dar los espacios al boton de la lista*/
+    z-index: 3;
+}
+
+.lista li:hover>ul {
+    /*Hacer que los submenus se vean*/
+    display: block;
+    position: absolute;
+}
+
+.lista2 {
+    position: absolute;
+    /*Lista que sale al darle click al boton*/
+    display: block;
+}
+
+.lista3 {
+    /*Hacer que los submenus aparezcan ocultos y larles estilo*/
+    display: none;
+    margin: -28px 0px 0px 120px;
+    background-color: rgb(90, 90, 90);
+    padding: 0px 5px 5px 0px;
+    list-style: none;
+}
+
+.lista3>li {
+    margin-left: 5px;
+}
+
+.interior {
+    align-items: center;
+}
+
+#mensaje {
+    /*Cancelar el movimiento de pixeles hecho a la derecha*/
+    margin-left: -80px;
+}
+
+
+/*CUERPO DE LA TIENDA*/
+
+.cuerpotienda {
+    /*Hacer que aparezcan los contenidos en columna*/
+    flex-direction: column;
+}
+
+.seccion {
+    /*Organizar el titulo y los paneles en columna*/
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.tit {
+    /*Espacios de los titulos y estilo*/
+    font-size: 60px;
+    font-weight: 400px;
+    text-align: center;
+    background: -webkit-linear-gradient(yellow,red);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+     color: tomato;
+    font-weight: 1000;
+}
+
+.paneles {
+    /*Hacer la fila de paneles */
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.panel {
+    /*Tamaño de los paneles que contienen los contenidos de la tienda*/
+    margin-top: 30px;
+    height: 387px;
+    width: 400px;
+}
+
+.show {
+    /*Clase para el js*/
+    display: block;
+    position: absolute;
+}
+
+
+/*TARJETAS*/
+
+.main{
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .title_fondos {
+      font-size: 60px;
+      font-weight: 400px;
+      text-align: center;
+      background: -webkit-linear-gradient(yellow,red);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+       color: tomato;
+      font-weight: 1000;
+  }
+  
+  img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+  
+  .btn {
+    color: #ffffff;
+    padding: 0.8rem;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    font-weight: 400;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+  }
+  
+  .btn:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+  }
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 400px;
+  }
+  
+  .cards_item {
+    display: flex;
+    padding: 1rem;
+  }
+  
+  @media (min-width: 40rem) {
+    .cards_item {
+      width: 50%;
+    }
+  }
+  
+  @media (min-width: 56rem) {
+    .cards_item {
+      width: 33.3333%;
+    }
+  }
+  
+  .card {
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .card_content {
+    padding: 1rem;
+    background: linear-gradient(to bottom left, #5f5f5f 40%, #000000 100%);
+    z-index: 1;
+  }
+  
+  .card_title {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin: 0px;
+  }
+  
+  .card_text {
+    color: #ffffff;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;    
+    font-weight: 400;
+  }
+  
+  .card_image:hover{
+    transform: scale(1.1);
+  }
+  
+  .card_image{
+    transition: transform .2s; /* Animation */
+    z-index: 0;
+  }
+  
+  
+  

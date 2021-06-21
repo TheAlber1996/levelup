@@ -1,0 +1,690 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    height: 100%;
+    background-color: #232427;
+}
+
+/*PARA ESCONDER CUALQUIER ELEMENTO*/
+.invisible{
+    visibility: hidden;
+}
+
+.main {
+    /*EL NUMERO QUE SE LE RESTA ES EL TAMAÑO DEL HEIGTH DEL NAV*/
+    min-height: calc(100vh - 65px);
+    max-height: calc(100vh - 65px);
+    display: flex;
+    justify-content: center;
+}
+
+.general {
+    width: 900px;
+    background-color: #333333;
+    display: grid;
+    grid-template-columns: 275px 1fr;
+}
+
+/*ELEMENTOS DE CONVER, LA LISTA DONDE SE MUESTRAN LOS AMIGOS/GRUPOS*/
+.conver{
+    /*background-color: #006A9E;*/
+    border-right: 1px solid #AAAAAA;
+    border-top: 1px solid #AAAAAA;
+}
+    /*ELEMENTOS DE LA SECTION AMIGOS*/
+    .amigos, .grupos{
+        background-color: #131c21;
+        height: 50%;
+    }
+        /**/
+        .titulo_grupos, .titulo_amigos{
+            background-color: #2a2f32;
+            color: #AAAAAA;
+            border: none;
+            height: 59px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+            .div_grupo{
+                background-color: #2a2f32;
+                border: none;
+                height: 50px;
+                width: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 100%;
+            }
+            .div_grupo:hover{
+                background-color: #555555;
+            }
+            .menu{
+                width: 30px;
+                height: 30px;
+                object-fit: contain;
+            }
+        .div_busqueda{
+            height: 35px;
+            padding: 2px;
+            border-bottom: 1px solid #AAAAAA;
+        }
+            .caja {
+                height: 30px;
+                border: 2px solid #AAAAAA;
+                border-radius: 15px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 0 10px 0 10px;
+            }
+                .caja>img {
+                    margin-right: 5px;
+                    height: 20px;
+                    width: 20px;
+                    object-fit: cover;
+                }
+                .caja>input {
+                    height: 100%;
+                    width: 100%;
+                    background-color: transparent;
+                    border: 0;
+                    padding: 5px;
+                    font-size: 15px;
+                    color: #AAAAAA;
+                    outline: none;
+                }
+                ::placeholder {
+                    color: #AAAAAA;
+                }
+        #scroll_amigos, #scroll_grupos {
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: calc((100vh - 65px - 118px - 1px - 70px)/2);
+            /**
+             * DE LA ALTURA TOTAL DE LA PANTALLA RESTAMOS LAS SIGUIENTES DIMENSIONES
+             * 65px - TAMAÑO HEIGTH DE LA NAVBAR
+             * 118px - LOS TITULOS DE AMIGOS Y GRUPOS, 59px CADA UNO
+             * 1px - BORDE DEL DIV CONVERSACIONES
+             * 70px - LAS CAJAS DE BUSQUEDA CADA UNA 35px
+             */
+        }
+        #scroll_amigos::-webkit-scrollbar, #scroll_grupos::-webkit-scrollbar {
+            display: none;
+        }
+
+        .user{
+            border-bottom: 1px solid #AAAAAA;
+            height: 40px;
+            width: 275px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #AAAAAA;
+            /*border: none;*/
+        }
+            .user:hover{
+                background-color:#555555;
+            }
+            .img_amigo{
+                height: 36px;
+                width: 36px;
+                object-fit: cover;
+                border-radius: 18px;
+            }
+            .img_on, .img_mas{
+                height: 15px;
+                width: 15px;
+                object-fit: contain;
+            }
+            .user>label{
+                padding-left: 20px;
+                width: 180px;
+                font-size: 18px;
+                text-align: left;
+            }
+            .bt_mas{
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                background-color: transparent;
+            }
+
+/*ELEMENTOS DEL CHAT*/
+.chat{
+    background-color: #2a2f32;
+    display: grid;
+    grid-template-rows: 60px 1fr 60px;
+}
+
+    /*ELEMENTOS DEL DIV DATOS*/
+    .datos{
+        background-color: #2a2f32;
+        border: none; /*COMO ES UN BOTON PRIMERO LE QUITO EL BORDE*/
+        border-top: 1px solid #AAAAAA;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        padding-left: 15px;
+    }
+        .imgperfil{
+            height: 50px;
+            width: 50px;
+            object-fit: cover;
+            border-radius: 25px;
+        }
+        .nombre{
+            width: 300px;
+            padding-left: 20px;
+            align-self: center;
+            color: #AAAAAA;
+        }
+        .datos>a{
+            width: 40px;
+            height: 40px;
+            margin-left: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .datos>a:hover{
+            background-color: #555555;
+            border-radius: 20px;
+        }
+            .img_info{
+                width: 20px;
+                height: 20px;
+                object-fit: contain;
+            }
+
+    /*ELEMENTOS DE LA INFORMACION DE LOS GRUPOS*/
+        .info {
+            padding: 25px 0 25px 0;
+            width: 100%;
+            height: 100%;
+            background-color: #131c21;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .info>div{
+            width: 275px;
+        }
+        .info_grupo{
+            width: 275px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+            .cambiar_img_grupo{
+                padding: 2px;
+                border: 3px solid #AAAAAA;
+                border-radius: 15px;
+                color: #AAAAAA;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 20px;
+                margin-top: 10px;
+                margin-bottom: 25px;
+            }
+            .info_grupo>#previewChat>img{
+                width: 250px;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 125px;
+                border: 5px solid #AAAAAA;
+            }
+            .info_grupo>input[type=text]{
+                color: #AAAAAA;
+                margin-bottom: 40px;
+                background-color: transparent;
+                border: none;
+                border-bottom: 2px solid #AAAAAA;
+                font-size: 25px;
+                outline: none;
+            }
+            .info_grupo>textarea{
+                overflow-y: hidden;
+                resize: none;
+                white-space: normal;
+                padding: 5px;
+                font-size: 15px;
+                background-color: transparent;
+                border: none;
+                border: 2px solid #AAAAAA;
+                color: #AAAAAA;
+                outline: transparent;
+            }
+            .info_grupo>label{
+                color: #AAAAAA;
+                font-size: 15px;
+            }
+            .bt_editar, .bt_eliminar {
+                margin-top: 10px;
+                height: auto;
+                padding: 2px;
+                border-radius: 15px;
+                font-weight: bold;
+                background-color: #2a2f32;
+                border: 3px solid #AAAAAA;
+                color: #AAAAAA;
+                font-size: 20px;
+            }
+            #scroll_usuario{
+                /* -65 navbar
+                 * -120 info grupo y enviar texto
+                 * -50 padding interior
+                 * -35 caja de busqueda
+                 */
+                height: calc(100vh - 65px - 120px - 50px - 35px);
+            }
+            .delete {
+                margin-left: 10px;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: transparent;
+                border: none;
+            }
+                .delete:hover {
+                    border-radius: 15px;
+                    background-color: #555555;
+                }
+                .delete>img {
+                    width: 15px;
+                    height: 15px;
+                    object-fit: contain;
+                }
+
+
+    /*ELEMENTOS DEL DIV ESCRIBIR*/
+    .scroll{
+        height: 100%;
+        width: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        background-image: url("../../../img/fondo.jpg");
+    }
+    .scroll::-webkit-scrollbar {
+        width: 10px;
+    }
+    /* Track */
+    .scroll::-webkit-scrollbar-track {
+        background: transparent; 
+    }
+    /* Handle */
+    .scroll::-webkit-scrollbar-thumb {
+        background: rgb(190, 190, 190, 0.664);
+    }
+    /* Handle on hover */
+    .scroll::-webkit-scrollbar-thumb:hover {
+        background: rgb(190, 190, 190);
+    }
+    
+        /*ELEMENTOS DE LA CREACION DE GRUPOS*/
+        .create{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+            .create>form:first-child{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                width: 100%;
+            }
+                .create #previewChat {
+                    padding: 0;
+                    margin: 0;
+                    width: 150px;
+                    height: 150px;
+                    background-color: #AAAAAA;
+                    border-radius: 75px;
+                }
+                .create #previewChat>img {
+                    margin: 0;
+                    padding: 0;
+                    width: 150px;
+                    height: 150px;
+                    object-fit: cover;
+                    border: 5px solid #AAAAAA;
+                    border-radius: 75px;
+                    position: relative;
+                }
+                .create_img_grupo{
+                    width: 200px;
+                    height: auto;
+                    padding: 2px;
+                    border: 3px solid #AAAAAA;
+                    border-radius: 15px;
+                    color: #AAAAAA;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 20px;
+                    margin-top: 10px;
+                }
+                    .create_img_grupo>label{
+                        color: #AAAAAA;
+                        font-size: 20px;
+                        width: 200px;
+                        text-align: center;
+                    }
+                    .bt_foto{
+                        width: 200px;
+                        height: auto;
+                        border: 3px solid #AAAAAA;
+                        border-radius: 15px;
+                        font-size: 20px;
+                        color: #AAAAAA;
+                        background-color: transparent;
+                        padding: 2px;
+                    }
+                    input[type="file"] {
+                        display: none;
+                    }
+            .create_nombre{
+                font-size: 20px;
+                margin-top: 20px;
+                color: #AAAAAA;
+                display: flex;
+                align-items: flex-end;
+            }
+                .create_nombre>input{
+                    width: 240px;
+                    padding-left: 5px;
+                    margin-left: 20px;
+                    font-size: 30px;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 2px solid #AAAAAA;
+                    color: #AAAAAA;
+                    outline: transparent;
+                }
+            .create_desc{
+                font-size: 20px;
+                margin-top: 20px;
+                color: #AAAAAA;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+            }
+                .create_desc>textarea{
+                    overflow-y: hidden;
+                    resize: none;
+                    white-space: normal;
+                    padding: 5px;
+                    margin-left: 20px;
+                    font-size: 15px;
+                    background-color: transparent;
+                    border: none;
+                    border: 2px solid #AAAAAA;
+                    color: #AAAAAA;
+                    outline: transparent;
+                }
+            .create_num{
+                font-size: 20px;
+                margin-top: 20px;
+                color: #AAAAAA;
+                height: 42px;
+                display: flex;
+                align-items: flex-end;
+            }
+                .create_num>input{
+                    margin-left: 25px;
+                    margin-right: 25px;
+                    vertical-align: bottom;
+                    width: 300px;
+                    font-size: 30px;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 2px solid #AAAAAA;
+                    color: #AAAAAA;
+                    outline: transparent;
+                }
+            .boton{
+                width: 100%;
+                text-align: center;
+            }
+            .bt_create{
+                height: auto;
+                padding: 2px;
+                border-radius: 15px;
+                font-size: 30px;
+                font-weight: bold;
+                background-color: #2a2f32;
+                border: 3px solid #AAAAAA;
+                color: #AAAAAA;
+                width: 80%;
+                margin-top: 20px;
+            }
+            .bt_create:hover{
+                background-color: #555555;
+            }
+
+        /*ELEMENTOS DE MENSAJE*/
+        #mensajes{
+            /*background-color: greenyellow;*/
+            height: calc(100vh - 65px - 120px);
+        }
+            .sinConver {
+                padding-top: 90px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+                .img_charla{
+                    padding-bottom: 40px;
+                    width: 350px;
+                }
+                .sinConver>label{
+                    color: #AAAAAA;
+                }
+                
+            .other, .me{
+                padding: 10px;
+            }
+
+            /*ELEMENTOS DEL DIV ME*/
+            .me{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+            .caja_nombre{
+                padding: 5px 10px 5px 10px;
+                font-weight: bold;
+                border-radius: 10px;
+                margin: 1px;
+                color: #0fbff2;
+            }
+            .caja_msj{
+                font-weight: 500;
+                padding: 5px;
+                padding-left: 10px;
+                border-radius: 10px;
+                margin: 1px;
+                display: flex;
+                flex-direction: row;
+                border: none;
+            }
+            .drch{
+                background-color: rgba(6, 247, 255, 0.6);
+            }
+
+            .texto {
+                text-align: left;
+                white-space: normal;
+                word-wrap: break-word;
+                max-width: 310px;
+            }
+            
+            .hora{
+                font-size: 10px;
+                padding-left: 25px;
+                align-self: flex-end;
+                width: 50px;
+            }
+
+            /*ELEMENTOS DEL DIV OTHER*/
+            .other{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .other>button{
+                background-color: rgb(190, 190, 190, 0.664);
+            }
+            .caja_nombre{
+                background-color: #666666;
+            }
+            .vacio {
+                padding-top: 20px;
+                text-align: center;
+            }
+            
+            .vacio label {
+                background-color: #555555;
+                padding: 5px 15px 5px 15px;
+                border: 0;
+                border-radius: 20px;
+                font-weight: bold;
+            }
+
+/*ELEMENTOS DEL DIV ESCRIBIR*/
+    .escribir{
+        background-color: #2a2f32;
+        display: grid;
+        grid-template-columns: 50px 1fr 50px;
+        grid-column-gap: 5px;
+        padding: 5px;
+    }
+        .div{
+            display: grid;
+            grid-template-rows: 0px 50px;
+        }
+            .abajo{
+                position: relative;
+                bottom: 65px;
+                left: 5px;
+                background-color: rgb(85, 85, 85, 0.7);
+                border-radius: 100%;
+                border: none;
+                height: 50px;
+                width: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                display: none;
+            }
+            .abajo:hover{
+                background-color: rgb(85, 85, 85, 0.8);
+            }
+        .caja_mensaje{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 25px;
+            border: 0px;
+            color: black;
+            outline: none;
+            overflow: hidden;
+            resize: none;
+        }
+        .emoji, 
+        .bt_enviar{
+            background-color: #2a2f32;
+            margin: 0;
+            padding: 0;
+            border-radius: 100%;
+            border: none;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+            .emoji:hover, 
+            .bt_enviar:hover{
+                background-color: #555555;
+            }
+            .emoji>img, 
+            .abajo>img, 
+            .bt_enviar>img{
+                height: 30px;
+                width: 30px;
+                object-fit: contain;
+            }
+/*DROPDOWN EMOTICONOS*/
+.menuEmoji{
+    width: 325px;
+    height: 210px;
+    background-color: rgb(85, 85, 85, 0.7);
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: none;
+    position: relative;
+    bottom: 220px;
+    left: 5px;
+    z-index: 1;
+}
+    .menuEmoji>button{
+        margin-right: 5px;
+        margin-left: 5px;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        border: none;
+    }
+    .menuEmoji>button:hover{
+        background-color: rgb(85, 85, 85, 0.7);
+        border-radius: 20px;
+    }
+
+/*DROPDOWN PARA FUNCION ELIMINAR MENSAJE*/
+.menuBorrar{
+    display: none;
+    position: relative;
+    z-index: 1;
+    padding: 5px;
+    background-color: #2C2C2C;
+    list-style-type: none;
+    box-shadow: 0px 0px 10px #000;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.menuBorrar:hover{
+    background-color: #555555;
+}
+.show {
+    display: block;
+}
+.borrar_msg{
+    border: none;
+    background-color: transparent;
+    color: #AAAAAA;
+}
+
+.dropdown-menu{
+    padding-left: 5px;
+}
